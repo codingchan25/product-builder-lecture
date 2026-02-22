@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>점심 메뉴 추천기</title>
+    <style>
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+        p {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        #result {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #e74c3c;
+            min-height: 50px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            background-color: #2ecc71;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>오늘 점심 뭐 먹지? 🤔</h1>
+        <p>버튼을 눌러 메뉴를 추천받아보세요!</p>
+        
+        <div id="result">메뉴를 기다리는 중...</div>
+        
+        <button onclick="recommendMenu()">메뉴 추천 받기</button>
+    </div>
+
+    <script>
+        // 추천할 점심 메뉴 리스트
+        const menus = [
+            '김치찌개', '된장찌개', '돈까스', '제육볶음', '짜장면',
+            '짬뽕', '햄버거', '초밥', '냉면', '순대국밥',
+            '비빔밥', '마라탕', '샐러드', '우동', '떡볶이',
+            '샌드위치', '피자', '파스타', '뼈해장국', '칼국수',
+            '쌀국수', '카레', '육회비빔밥', '찜닭', '부대찌개'
+        ];
+
+        function recommendMenu() {
+            const resultDiv = document.getElementById('result');
+            
+            // 살짝 고민하는 듯한 효과 주기
+            resultDiv.style.color = '#7f8c8d';
+            resultDiv.innerText = '음... 고민 중... 💭';
+            
+            // 0.6초 뒤에 결과 보여주기
+            setTimeout(() => {
+                // 0부터 메뉴 개수 사이의 랜덤한 숫자 생성
+                const randomIndex = Math.floor(Math.random() * menus.length);
+                
+                // 결과 화면에 출력
+                resultDiv.style.color = '#e74c3c';
+                resultDiv.innerText = `"${menus[randomIndex]}" 어때요? 😋`;
+            }, 600); 
+        }
+    </script>
+
+</body>
+</html>
