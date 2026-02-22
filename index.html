@@ -10,46 +10,65 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="ads-container">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-1968623677253421"
-             data-ad-slot="6979583415"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-    <button id="theme-toggle">테마 변경</button>
-    <div class="container">
-        <h1>오늘 점심 뭐 먹지? 🤔</h1>
-        <p>버튼을 눌러 메뉴를 추천받아보세요!</p>
+    <header>
+        <nav class="navigation-bar">
+            <a href="index.html" class="nav-logo">점심 메뉴 추천기</a>
+            <ul class="nav-links">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="articles.html">아티클</a></li>
+                <li><a href="about.html">소개</a></li>
+                <li><a href="privacy.html">개인정보처리방침</a></li>
+            </ul>
+            <button id="theme-toggle">테마 변경</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1968623677253421"
+                 data-ad-slot="6979583415"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
         
-        <div id="result">메뉴를 기다리는 중...</div>
-        
-        <button onclick="recommendMenu()">메뉴 추천 받기</button>
-    </div>
+        <div class="container">
+            <h1>오늘 점심 뭐 먹지? 🤔</h1>
+            <p>버튼을 눌러 메뉴를 추천받아보세요!</p>
+            
+            <div id="result">메뉴를 기다리는 중...</div>
+            
+            <button onclick="recommendMenu()">메뉴 추천 받기</button>
+        </div>
+
+        <div class="container contact-form-container">
+            <h2>제휴 문의</h2>
+            <form action="https://formspree.io/f/mlgwwpdq" method="POST">
+                <div class="form-group">
+                    <label for="name">이름:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일:</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">메시지:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">문의하기</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 점심 메뉴 추천기. All Rights Reserved.</p>
+    </footer>
 
     <script src="main.js"></script>
-
-    <div class="container contact-form-container">
-        <h2>제휴 문의</h2>
-        <form action="https://formspree.io/f/mlgwwpdq" method="POST">
-            <div class="form-group">
-                <label for="name">이름:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">이메일:</label>
-                <input type="email" id="email" name="_replyto" required>
-            </div>
-            <div class="form-group">
-                <label for="message">메시지:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit">문의하기</button>
-        </form>
-    </div>
 </body>
 </html>
